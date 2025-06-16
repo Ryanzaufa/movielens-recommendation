@@ -22,7 +22,7 @@ Tujuan yang bisa didapatkan dari rumusan masalah:
 2. Membangun arsitektur RecommenderNet (embedding layer) menggunakan TensorFlow untuk belajar dari embedding pengguna dan film, serta memprediksi rating secara akurat menggunakan metrik evaluasi MAE dan Loss.
 
 ## Data Understanding
-Dataset yang digunakan untuk membangun sistem rekomendasi diambil dari [**Kaggle: Movie Recommender System**](https://www.kaggle.com/datasets/himelsarder/coffee-shop-daily-revenue-prediction-dataset/data). Dataset tersebut dipublikasikan oleh Ranit Sarkar. Dataset ini berisi informasi mengenai film dan interaksi pengguna dalam bentuk rating, serta metadata terkait film seperti genre. Dataset ini sangat cocok untuk membangun sistem rekomendasi baik berbasis konten (content-based) maupun kolaboratif (collaborative filtering). Dataset ini memiliki tingkat *usability* mencapai 10.00/10.00. Dataset terdiri dari 3 file DAT tetapi yang akan digunakan hanya 2, yaitu:
+Dataset yang digunakan untuk membangun sistem rekomendasi diambil dari [**Kaggle: Movie Recommender System**](https://www.kaggle.com/datasets/ranitsarkar01/movies-recommender-system-dataset). Dataset tersebut dipublikasikan oleh Ranit Sarkar. Dataset ini berisi informasi mengenai film dan interaksi pengguna dalam bentuk rating, serta metadata terkait film seperti genre. Dataset ini sangat cocok untuk membangun sistem rekomendasi baik berbasis konten (content-based) maupun kolaboratif (collaborative filtering). Dataset ini memiliki tingkat *usability* mencapai 10.00/10.00. Dataset terdiri dari 3 file DAT tetapi yang akan digunakan hanya 2, yaitu:
 - movies.dat
 - ratings.dat
 
