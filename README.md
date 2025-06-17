@@ -148,7 +148,8 @@ Tahap ini mencakup pembersihan dan transformasi data agar siap digunakan dalam p
 ### Merged kedua dataframe dan mengubah beberapa fitur
 Pada tahap ini kedua dataset digabung menjadi 1 berdasarkan fitur movieId. Hal ini dilakukan agar dapat mempermudah membagi data yang diperlukan untuk *content based filtering* dan *collaborative based filtering*
 
-![merged_dataset](https://github.com/user-attachments/assets/6b59883d-eadb-4c70-b454-7d1a64b9585c)
+![merged_dataset](https://github.com/user-attachments/assets/d49e9f30-0af2-4950-be20-005ee4a092f7)
+
 
 ### Memisahkan data untuk content based dan collaborative based
 Dataset yang telah dimerged dipisahkan untuk masing-masing keperluan sistem rekomendasi. Nantinya kedua pendekatan akan menggunakan dataset yang berbeda agar hasil diberikan lebih baik. Dataset juga akan diproses sesuai kebutuhan kedua pendekatan tersebut.
@@ -157,9 +158,15 @@ Dataset yang telah dimerged dipisahkan untuk masing-masing keperluan sistem reko
 
   Berikut dataset awal untuk *content based*. Data untuk pendeketan ini berfokus kepada title, year dan genre
 
+  ![drop_user_rating](https://github.com/user-attachments/assets/0e508516-f30e-4a58-a559-619b29957ef4)
+  
+  ![membuat_features](https://github.com/user-attachments/assets/b761b3a1-4385-4462-9453-d864136d0d86)
+  
   ![dataset_content_based](https://github.com/user-attachments/assets/7fa3a962-32e4-40a5-998b-10659ca8aeaa)
 
-  Selanjutnya dataset tersebut akan diproses agar bisa menghasilkan matriks yang nantinya akan digunakan untuk proses modeling sistem rekomendasi *content based* dengan *cosine  similiarity.
+  Selanjutnya dataset tersebut akan diproses agar bisa menghasilkan matriks yang nantinya akan digunakan untuk proses modeling sistem rekomendasi *content based* dengan *cosine  similiarity*.
+
+  ![init_tfidf](https://github.com/user-attachments/assets/457e19ee-ccbc-4b7b-989e-944766647098)
 
   ![dataframe_matriks_content_based](https://github.com/user-attachments/assets/dd748b66-f002-43e0-84dc-e4964988125e)
 
@@ -167,6 +174,16 @@ Dataset yang telah dimerged dipisahkan untuk masing-masing keperluan sistem reko
 
   Berikut dataset awal untuk *collaborative based*. Dataset untuk pendekatan ini akan berfokus kepada informasi users seperti ratings dan userId. Data ini sudah melalui proses encoding untuk movie dan user id serta normalisasi untuk rating.
 
+  **Drop Kolom Year dan Genre**
+
+  ![drop_year_genre](https://github.com/user-attachments/assets/3bb3e89b-1179-4eb7-868b-2527a7a2ae51)
+
+  **Encoding dan Normalisasi**
+
+  ![encoding_normalisasi](https://github.com/user-attachments/assets/275383d0-ea6b-4438-87b5-f0ddee9c4575)
+
+  **Dataset yang telah diproses**
+  
   ![processed_dataset_collab_based](https://github.com/user-attachments/assets/3a64cc4e-ed9f-4d14-adee-e62ae85c9fd7)
 
 ## Modeling
@@ -212,14 +229,15 @@ Dimana:
 - TP (*True Positive*), jumlah kejadian positif yang diprediksi dengan benar.
 - FP (*False Positive*), jumlah kejadian positif yang diprediksi dengan salah.
 
+![precision_content_based](https://github.com/user-attachments/assets/4807dd9e-d3d3-4abd-853c-f82dd1b27a84)
+
 Berdasarkan hasil yang terdapat pada tahap Model and Result dapat dilihat bahwasanya:
-- Hasil rekomendasi berdasarkan **genre** berhasil memeberikan rekomendasi yang sesuai **(7 dari 10)**
+- Hasil rekomendasi berdasarkan **genre** berhasil memeberikan rekomendasi yang sesuai **(6 dari 10)**
 - Hasil rekomendasi berdasarkan **tahun** berhasil memberikan rekomendasi yang sesuai **(10 dari 10)**
 
 ### 2. *Collaborative Based Filtering*
 
 ![evaluation_graph](https://github.com/user-attachments/assets/3ddedc2e-7f94-4c25-bb88-6c0b0a2b9f7b)
-
 
 Berdasarkan hasil pelatihan model collaborative filtering berbasis deep learning selama 10 epoch, performa model menunjukkan hasil yang cukup stabil namun mengalami sedikit overfitting seiring bertambahnya epoch. Hal ini dapat terlihat dari grafik Training vs Validation Loss (MSE) dan Training vs Validation MAE, serta nilai metrik pada setiap epoch.
 
