@@ -212,7 +212,8 @@ Namun, embedding layer juga memiliki beberapa keterbatasan. Di antaranya adalah 
 
 Setelah proses pelatihan model selesai, diperoleh hasil evaluasi menggunakan metrik loss dan mean absolute error. Berdasarkan model collaborative filtering yang telah dibangun, sistem kemudian diuji untuk menghasilkan top 10 rekomendasi film yang paling relevan untuk masing-masing pengguna. Rekomendasi ini disusun berdasarkan pola interaksi dan preferensi pengguna terhadap film-film sebelumnya, tanpa melihat isi konten film secara langsung.
 
-![hasil_collab_based](https://github.com/user-attachments/assets/0e2ea575-1c9d-4ad4-b091-f181c22babf7)
+![hasil_collab_based](https://github.com/user-attachments/assets/74c80302-fca1-4649-82f9-eaf4ae96ac33)
+
 
 ## Evaluation
 
